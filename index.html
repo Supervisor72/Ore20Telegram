@@ -1,8 +1,9 @@
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Dati Serali - Ore 20</title>
   <style>
     body {
@@ -58,25 +59,25 @@
       <option>Pesaro</option>
     </select>
 
-    <label>Venduto Giorno (€)</label>
+    <label>Venduto Giorno</label>
     <input type="text" id="venduto">
 
-    <label>AV Budget Mese (%)</label>
+    <label>AV Budget Mese %</label>
     <input type="text" id="budget">
 
     <label>Finanziamenti / Safeguard</label>
     <input type="text" id="safeguard">
 
-    <label>Incidenza XD Ped Giorno (%)</label>
+    <label>Incidenza XD Ped Giorno</label>
     <input type="text" id="xdped">
 
-    <label>Delta EKOS Mese (€)</label>
+    <label>Delta EKOS Mese (Euro)</label>
     <input type="text" id="ekos">
 
-    <label>Delta SBS Mese (€)</label>
+    <label>Delta SBS Mese (Euro)</label>
     <input type="text" id="sbs">
 
-    <label>Delta XDE Mese (€)</label>
+    <label>Delta XDE Mese Totale (Euro)</label>
     <input type="text" id="xde">
 
     <label>iPhone Totali / Garanzie</label>
@@ -116,25 +117,24 @@
     function inviaTelegram() {
       const p = id => document.getElementById(id).value || '';
       const pv = p('puntoVendita');
-
       const msg = `DATI SERALI  ORE 20 :\n\n` +
-        `VENDUTO GIORNO  : € ${p('venduto')}\n` +
+        `VENDUTO GIORNO  : €${p('venduto')}\n` +
         `AV BUDGET MESE   : ${p('budget')}%\n\n` +
-        `FINANZIAMENTI / SAFEGUARD \n${p('safeguard')}\n\n` +
-        `INCIDENZA XD PED GIORNO \n${p('xdped')}%\n\n` +
-        `DELTA EKOS MESE IN CORSO \n€ ${p('ekos')}\n` +
-        `DELTA SBS MESE IN CORSO  \n€ ${p('sbs')}\n` +
-        `DELTA XDE MESE TOTALE   \n€ ${p('xde')}\n\n` +
-        `IPHONE TOTALI / GARANZIE \n${p('iphone')}\n` +
-        `APPLE INFO / GARANZIE \n${p('apple')}\n\n` +
-        `ATTIVAZIONI HO \n${p('ho')}\n` +
-        `ATTIVAZIONI VERY MOBILE\n${p('very')}\n\n` +
-        `OLED \n${p('oled')}\n` +
-        `AEG BIANCO\n${p('aeg')}\n` +
-        `ASCIUGATRICI \n${p('asciugatrici')}\n` +
-        `SCOPE NO FILI \n${p('scope')}\n` +
-        `I-ROBOT \n${p('irobot')}\n` +
-        `CAFFE’ AUTOMATICHE \n${p('caffe')}`;
+        `FINANZIAMENTI / SAFEGUARD ${p('safeguard')}\n\n` +
+        `INCIDENZA XD PED GIORNO ${p('xdped')}%\n\n` +
+        `DELTA EKOS MESE IN CORSO €${p('ekos')}\n` +
+        `DELTA SBS MESE IN CORSO  €${p('sbs')}\n` +
+        `DELTA XDE MESE TOTALE   €${p('xde')}\n\n` +
+        `IPHONE TOTALI / GARANZIE ${p('iphone')}\n` +
+        `APPLE INFO / GARANZIE ${p('apple')}\n\n` +
+        `ATTIVAZIONI HO ${p('ho')}\n` +
+        `ATTIVAZIONI VERY MOBILE ${p('very')}\n\n` +
+        `OLED ${p('oled')}\n` +
+        `AEG BIANCO ${p('aeg')}\n` +
+        `ASCIUGATRICI ${p('asciugatrici')}\n` +
+        `SCOPE NO FILI ${p('scope')}\n` +
+        `I-ROBOT ${p('irobot')}\n` +
+        `CAFFE’ AUTOMATICHE ${p('caffe')}`;
 
       const encoded = encodeURIComponent(msg);
       window.open(`https://t.me/share/url?url=&text=${encoded}`, '_blank');
