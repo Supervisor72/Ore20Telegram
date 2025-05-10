@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Invio Dati</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background: #f9f9f9;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin: 20px 0 5px;
+    }
+    select, input, textarea {
+      width: 100%;
+      padding: 15px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 25px;
+    }
+    button {
+      padding: 15px 25px;
+      font-size: 18px;
+      margin-right: 15px;
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+    }
+    #sendTelegram {
+      background-color: #0088cc;
+    }
+    #sendWhatsApp {
+      background-color: #25d366;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>DATO ORE 13</h1>
+
+  <form id="dataForm">
+    <label for="puntoVendita">Punto Vendita</label>
+    <select id="puntoVendita" name="puntoVendita" required>
+      <option value="">Seleziona...</option>
+      <option value="Fano">Fano</option>
+      <option value="Monsano">Monsano</option>
+      <option value="Osimo">Osimo</option>
+      <option value="Macerata">Macerata</option>
+      <option value="Civitanova">Civitanova</option>
+      <option value="Pesaro">Pesaro</option>
+    </select>
+
+    <label for="campo1">TV vendute</label>
+    <input type="text" id="campo1" name="campo1">
+
+    <label for="campo2">Frigoriferi venduti</label>
+    <input type="text" id="campo2" name="campo2">
+
+    <label for="campo3">Lavatrici vendute</label>
+    <input type="text" id="campo3" name="campo3">
+
+    <label for="campo4">Incassi Totali (€)</label>
+    <input type="text" id="campo4" name="campo4">
+
+    <button type="button" id="sendTelegram">Invia su Telegram</button>
+    <button type="button" id="sendWhatsApp">Invia su WhatsApp</button>
+  </form>
+
+  <script>
+    function generateMessage() {
+      const pv = document.getElementById('puntoVendita').value;
+      const c1 = document.getElementById('campo1').value;
+      const c2 = document.getElementById('campo2').value;
+      const c3 = document.getElementById('campo3').value;
+      const c4 = document.getElementById('campo4').value;
+
+      return `DATO ORE 13\n\nPunto vendita: ${pv}\n\n• TV vendute: ${c1}\n\n• Frigoriferi venduti: ${c2}\n\n• Lavatrici vendute: ${c3}\n\n• Incassi Totali (€): ${c4}`;
+    }
+
+    document.getElementById('sendTelegram').addEventListener('click', function() {
+      const msg = encodeURIComponent(generateMessage());
+      window.open(`https://t.me/share/url?url=&text=${msg}`, '_blank');
+    });
+
+    document.getElementById('sendWhatsApp').addEventListener('click', function() {
+      const msg = encodeURIComponent(generateMessage());
+      window.open(`https://wa.me/?text=${msg}`, '_blank');
+    });
+  </script>
+</body>
+</html>
