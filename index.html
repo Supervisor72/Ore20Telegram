@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dati Serali - Ore 20</title>
   <style>
     body {
@@ -30,7 +30,7 @@
       border: 1px solid #ccc;
     }
     button {
-      width: 48%;
+      width: 100%;
       padding: 12px;
       margin-top: 20px;
       font-size: 16px;
@@ -39,11 +39,6 @@
       cursor: pointer;
       background-color: #0088cc;
       color: white;
-    }
-    .btn-container {
-      display: flex;
-      justify-content: space-between;
-      gap: 4%;
     }
   </style>
 </head>
@@ -64,84 +59,82 @@
     </select>
 
     <label>Venduto Giorno (€)</label>
-    <input type="number" id="venduto">
+    <input type="text" id="venduto">
 
     <label>AV Budget Mese (%)</label>
-    <input type="number" id="budget">
+    <input type="text" id="budget">
 
     <label>Finanziamenti / Safeguard</label>
-    <input type="number" id="safeguard">
+    <input type="text" id="safeguard">
 
-    <label>Incidenza XD Ped Giorno</label>
-    <input type="number" id="xdped">
+    <label>Incidenza XD Ped Giorno (%)</label>
+    <input type="text" id="xdped">
 
-    <label>Delta EKOS Mese (Euro)</label>
-    <input type="number" id="ekos">
+    <label>Delta EKOS Mese (€)</label>
+    <input type="text" id="ekos">
 
-    <label>Delta SBS Mese (Euro)</label>
-    <input type="number" id="sbs">
+    <label>Delta SBS Mese (€)</label>
+    <input type="text" id="sbs">
 
-    <label>Delta XDE Mese Totale (Euro)</label>
-    <input type="number" id="xde">
+    <label>Delta XDE Mese (€)</label>
+    <input type="text" id="xde">
 
     <label>iPhone Totali / Garanzie</label>
-    <input type="number" id="iphone">
+    <input type="text" id="iphone">
 
     <label>Apple Info / Garanzie</label>
-    <input type="number" id="apple">
+    <input type="text" id="apple">
 
     <label>Attivazioni HO</label>
-    <input type="number" id="ho">
+    <input type="text" id="ho">
 
     <label>Attivazioni Very Mobile</label>
-    <input type="number" id="very">
+    <input type="text" id="very">
 
     <label>OLED</label>
-    <input type="number" id="oled">
+    <input type="text" id="oled">
 
     <label>AEG Bianco</label>
-    <input type="number" id="aeg">
+    <input type="text" id="aeg">
 
     <label>Asciugatrici</label>
-    <input type="number" id="asciugatrici">
+    <input type="text" id="asciugatrici">
 
     <label>Scope No Fili</label>
-    <input type="number" id="scope">
+    <input type="text" id="scope">
 
     <label>I-Robot</label>
-    <input type="number" id="irobot">
+    <input type="text" id="irobot">
 
     <label>Caffè Automatiche</label>
-    <input type="number" id="caffe">
+    <input type="text" id="caffe">
 
-    <div class="btn-container">
-      <button type="button" onclick="inviaTelegram()">Invia Telegram</button>
-    </div>
+    <button type="button" onclick="inviaTelegram()">Invia Telegram</button>
   </form>
 
   <script>
     function inviaTelegram() {
-      const p = (id) => document.getElementById(id).value || '';
+      const p = id => document.getElementById(id).value || '';
       const pv = p('puntoVendita');
 
-      const msg = `DATI SERALI ORE 20 - ${pv}:\n\n` +
-        `VENDUTO GIORNO (€): ${p('venduto')}\n` +
-        `AV BUDGET MESE (%): ${p('budget')}\n` +
-        `FINANZIAMENTI / SAFEGUARD: ${p('safeguard')}\n` +
-        `INCIDENZA XD PED GIORNO: ${p('xdped')}\n` +
-        `DELTA EKOS MESE IN CORSO (Euro): ${p('ekos')}\n` +
-        `DELTA SBS MESE IN CORSO (Euro): ${p('sbs')}\n` +
-        `DELTA XDE MESE TOTALE (Euro): ${p('xde')}\n` +
-        `IPHONE TOTALI / GARANZIE: ${p('iphone')}\n` +
-        `APPLE INFO / GARANZIE: ${p('apple')}\n` +
-        `ATTIVAZIONI HO: ${p('ho')}\n` +
-        `ATTIVAZIONI VERY MOBILE: ${p('very')}\n\n` +
-        `OLED: ${p('oled')}\n` +
-        `AEG BIANCO: ${p('aeg')}\n` +
-        `ASCIUGATRICI: ${p('asciugatrici')}\n` +
-        `SCOPE NO FILI: ${p('scope')}\n` +
-        `I-ROBOT: ${p('irobot')}\n` +
-        `CAFFÈ AUTOMATICHE: ${p('caffe')}`;
+      const msg = `DATI SERALI  ORE 20 :\n\n` +
+        `VENDUTO GIORNO  : € ${p('venduto')}\n` +
+        `AV BUDGET MESE   : ${p('budget')}%\n\n` +
+        `FINANZIAMENTI / SAFEGUARD \n${p('safeguard')}\n\n` +
+        `INCIDENZA XD PED GIORNO \n${p('xdped')}%\n\n` +
+        `DELTA EKOS MESE IN CORSO \n€ ${p('ekos')}\n` +
+        `DELTA SBS MESE IN CORSO  \n€ ${p('sbs')}\n` +
+        `DELTA XDE MESE TOTALE   \n€ ${p('xde')}\n\n` +
+        `IPHONE TOTALI / GARANZIE \n${p('iphone')}\n` +
+        `APPLE INFO / GARANZIE \n${p('apple')}\n\n` +
+        `ATTIVAZIONI HO \n${p('ho')}\n` +
+        `ATTIVAZIONI VERY MOBILE\n${p('very')}\n\n` +
+        `OLED \n${p('oled')}\n` +
+        `AEG BIANCO\n${p('aeg')}\n` +
+        `ASCIUGATRICI \n${p('asciugatrici')}\n` +
+        `SCOPE NO FILI \n${p('scope')}\n` +
+        `I-ROBOT \n${p('irobot')}\n` +
+        `CAFFE’ AUTOMATICHE \n${p('caffe')}`;
 
       const encoded = encodeURIComponent(msg);
       window.open(`https://t.me/share/url?url=&text=${encoded}`, '_blank');
