@@ -118,15 +118,15 @@
       const p = id => document.getElementById(id).value || '';
       const pv = p('puntoVendita');
       const msg = `DATI SERALI  ORE 20 :\n\n` +
-        `VENDUTO GIORNO  : €${p('venduto')}\n` +
+        `VENDUTO : €${p('venduto')}\n` +
         `AV BUDGET MESE  : ${p('budget')}%\n\n` +
-        `FINANZ. / SAFEGUARD ${p('safeguard')}\n\n` +
+        `FINANZ./SAFEGUARD ${p('safeguard')}\n\n` +
         `INCID.XD PED OGGI ${p('xdped')}%\n\n` +
         `DELTA EKOS MESE €${p('ekos')}\n` +
         `DELTA SBS MESE  €${p('sbs')}\n` +
         `DELTA XDE MESE  €${p('xde')}\n\n` +
         `APPLE IPHONE/GAR.${p('iphone')}\n` +
-        `APPLE  PC /GAR. ${p('apple')}\n\n` +
+        `APPLE PC /GAR. ${p('apple')}\n\n` +
         `ATTIVAZIONI HO ${p('ho')}\n` +
         `ATTIVAZIONI VERY ${p('very')}\n\n` +
         `OLED ${p('oled')}\n` +
@@ -134,7 +134,7 @@
         `ASCIUGA  ${p('asciugatrici')}\n` +
         `SCOPE NO FILI ${p('scope')}\n` +
         `I-ROBOT ${p('irobot')}\n` +
-        `CAFFE’ AUTOM. ${p('caffe')}`;
+        `CAFFE’AUTOM. ${p('caffe')}`;
 
       const encoded = encodeURIComponent(msg);
       window.open(`https://t.me/share/url?url=&text=${encoded}`, '_blank');
