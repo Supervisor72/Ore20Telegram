@@ -120,21 +120,21 @@
       const msg = `DATI SERALI  ORE 20 :\n\n` +
         `VENDUTO GIORNO  : €${p('venduto')}\n` +
         `AV BUDGET MESE   : ${p('budget')}%\n\n` +
-        `FINANZIAMENTI / SAFEGUARD ${p('safeguard')}\n\n` +
-        `INCIDENZA XD PED GIORNO ${p('xdped')}%\n\n` +
-        `DELTA EKOS MESE IN CORSO €${p('ekos')}\n` +
-        `DELTA SBS MESE IN CORSO  €${p('sbs')}\n` +
+        `FINANZ. / SAFEGUARD ${p('safeguard')}\n\n` +
+        `INCID. XD PED GIORNO ${p('xdped')}%\n\n` +
+        `DELTA EKOS MESE  €${p('ekos')}\n` +
+        `DELTA SBS MESE   €${p('sbs')}\n` +
         `DELTA XDE MESE TOTALE   €${p('xde')}\n\n` +
-        `IPHONE TOTALI / GARANZIE ${p('iphone')}\n` +
-        `APPLE INFO / GARANZIE ${p('apple')}\n\n` +
+        `IPHONE TOTALI/GARANZIE ${p('iphone')}\n` +
+        `APPLE  PC /GARANZIE ${p('apple')}\n\n` +
         `ATTIVAZIONI HO ${p('ho')}\n` +
-        `ATTIVAZIONI VERY MOBILE ${p('very')}\n\n` +
+        `ATTIVAZIONI VERY  ${p('very')}\n\n` +
         `OLED ${p('oled')}\n` +
         `AEG BIANCO ${p('aeg')}\n` +
         `ASCIUGATRICI ${p('asciugatrici')}\n` +
         `SCOPE NO FILI ${p('scope')}\n` +
         `I-ROBOT ${p('irobot')}\n` +
-        `CAFFE’ AUTOMATICHE ${p('caffe')}`;
+        `CAFFE’ AUTOM. ${p('caffe')}`;
 
       const encoded = encodeURIComponent(msg);
       window.open(`https://t.me/share/url?url=&text=${encoded}`, '_blank');
