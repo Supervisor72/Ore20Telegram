@@ -63,56 +63,56 @@
       <option>Pesaro</option>
     </select>
 
-    <label>Venduto Giorno</label>
-    <input type="text" id="venduto">
+    <label>Venduto Giorno (€)</label>
+    <input type="number" id="venduto">
 
-    <label>AV Budget Mese %</label>
-    <input type="text" id="budget">
+    <label>AV Budget Mese (%)</label>
+    <input type="number" id="budget">
 
     <label>Finanziamenti / Safeguard</label>
-    <input type="text" id="safeguard">
+    <input type="number" id="safeguard">
 
     <label>Incidenza XD Ped Giorno</label>
-    <input type="text" id="xdped">
+    <input type="number" id="xdped">
 
     <label>Delta EKOS Mese (Euro)</label>
-    <input type="text" id="ekos">
+    <input type="number" id="ekos">
 
     <label>Delta SBS Mese (Euro)</label>
-    <input type="text" id="sbs">
+    <input type="number" id="sbs">
 
     <label>Delta XDE Mese Totale (Euro)</label>
-    <input type="text" id="xde">
+    <input type="number" id="xde">
 
     <label>iPhone Totali / Garanzie</label>
-    <input type="text" id="iphone">
+    <input type="number" id="iphone">
 
     <label>Apple Info / Garanzie</label>
-    <input type="text" id="apple">
+    <input type="number" id="apple">
 
     <label>Attivazioni HO</label>
-    <input type="text" id="ho">
+    <input type="number" id="ho">
 
     <label>Attivazioni Very Mobile</label>
-    <input type="text" id="very">
+    <input type="number" id="very">
 
     <label>OLED</label>
-    <input type="text" id="oled">
+    <input type="number" id="oled">
 
     <label>AEG Bianco</label>
-    <input type="text" id="aeg">
+    <input type="number" id="aeg">
 
     <label>Asciugatrici</label>
-    <input type="text" id="asciugatrici">
+    <input type="number" id="asciugatrici">
 
     <label>Scope No Fili</label>
-    <input type="text" id="scope">
+    <input type="number" id="scope">
 
     <label>I-Robot</label>
-    <input type="text" id="irobot">
+    <input type="number" id="irobot">
 
     <label>Caffè Automatiche</label>
-    <input type="text" id="caffe">
+    <input type="number" id="caffe">
 
     <div class="btn-container">
       <button type="button" onclick="inviaTelegram()">Invia Telegram</button>
@@ -125,23 +125,23 @@
       const pv = p('puntoVendita');
 
       const msg = `DATI SERALI ORE 20 - ${pv}:\n\n` +
-        ` VENDUTO GIORNO: ${p('venduto')}\n\n` +
-        ` AV BUDGET MESE %: ${p('budget')}\n\n` +
-        ` FINANZIAMENTI / SAFEGUARD: ${p('safeguard')}\n\n` +
-        ` INCIDENZA XD PED GIORNO: ${p('xdped')}\n\n` +
-        ` DELTA EKOS MESE IN CORSO: ${p('ekos')}\n\n` +
-        ` DELTA SBS MESE IN CORSO: ${p('sbs')}\n\n` +
-        ` DELTA XDE MESE TOTALE: ${p('xde')}\n\n` +
-        ` IPHONE TOTALI / GARANZIE: ${p('iphone')}\n\n` +
-        ` APPLE INFO / GARANZIE: ${p('apple')}\n\n` +
-        ` ATTIVAZIONI HO: ${p('ho')}\n\n` +
-        ` ATTIVAZIONI VERY MOBILE: ${p('very')}\n\n` +
-        ` OLED: ${p('oled')}\n\n` +
-        ` AEG BIANCO: ${p('aeg')}\n\n` +
-        ` ASCIUGATRICI: ${p('asciugatrici')}\n\n` +
-        ` SCOPE NO FILI: ${p('scope')}\n\n` +
-        ` I-ROBOT: ${p('irobot')}\n\n` +
-        ` CAFFÈ AUTOMATICHE: ${p('caffe')}`;
+        `VENDUTO GIORNO (€): ${p('venduto')}\n` +
+        `AV BUDGET MESE (%): ${p('budget')}\n` +
+        `FINANZIAMENTI / SAFEGUARD: ${p('safeguard')}\n` +
+        `INCIDENZA XD PED GIORNO: ${p('xdped')}\n` +
+        `DELTA EKOS MESE IN CORSO (Euro): ${p('ekos')}\n` +
+        `DELTA SBS MESE IN CORSO (Euro): ${p('sbs')}\n` +
+        `DELTA XDE MESE TOTALE (Euro): ${p('xde')}\n` +
+        `IPHONE TOTALI / GARANZIE: ${p('iphone')}\n` +
+        `APPLE INFO / GARANZIE: ${p('apple')}\n` +
+        `ATTIVAZIONI HO: ${p('ho')}\n` +
+        `ATTIVAZIONI VERY MOBILE: ${p('very')}\n\n` +
+        `OLED: ${p('oled')}\n` +
+        `AEG BIANCO: ${p('aeg')}\n` +
+        `ASCIUGATRICI: ${p('asciugatrici')}\n` +
+        `SCOPE NO FILI: ${p('scope')}\n` +
+        `I-ROBOT: ${p('irobot')}\n` +
+        `CAFFÈ AUTOMATICHE: ${p('caffe')}`;
 
       const encoded = encodeURIComponent(msg);
       window.open(`https://t.me/share/url?url=&text=${encoded}`, '_blank');
