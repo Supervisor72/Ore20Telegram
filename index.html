@@ -1,97 +1,152 @@
-
 <!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <title>Invio Dati</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dati Serali - Ore 20</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      padding: 30px;
-      background: #f9f9f9;
+      padding: 20px;
+      background: #f5f5f5;
+      max-width: 500px;
+      margin: auto;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
     }
     label {
-      font-weight: bold;
       display: block;
-      margin: 20px 0 5px;
+      margin-top: 15px;
+      font-weight: bold;
     }
-    select, input, textarea {
+    input, select {
       width: 100%;
-      padding: 15px;
+      padding: 12px;
+      margin-top: 6px;
       font-size: 16px;
+      border-radius: 6px;
       border: 1px solid #ccc;
-      border-radius: 8px;
-      margin-bottom: 25px;
     }
     button {
-      padding: 15px 25px;
-      font-size: 18px;
-      margin-right: 15px;
-      cursor: pointer;
+      width: 48%;
+      padding: 12px;
+      margin-top: 20px;
+      font-size: 16px;
       border: none;
-      border-radius: 8px;
-      color: #fff;
-    }
-    #sendTelegram {
+      border-radius: 6px;
+      cursor: pointer;
       background-color: #0088cc;
+      color: white;
     }
-    #sendWhatsApp {
-      background-color: #25d366;
+    .btn-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 4%;
     }
   </style>
 </head>
 <body>
 
-  <h1>DATO ORE 13</h1>
+  <h2>DATI SERALI - ORE 20</h2>
 
   <form id="dataForm">
     <label for="puntoVendita">Punto Vendita</label>
-    <select id="puntoVendita" name="puntoVendita" required>
+    <select id="puntoVendita" required>
       <option value="">Seleziona...</option>
-      <option value="Fano">Fano</option>
-      <option value="Monsano">Monsano</option>
-      <option value="Osimo">Osimo</option>
-      <option value="Macerata">Macerata</option>
-      <option value="Civitanova">Civitanova</option>
-      <option value="Pesaro">Pesaro</option>
+      <option>Fano</option>
+      <option>Monsano</option>
+      <option>Osimo</option>
+      <option>Macerata</option>
+      <option>Civitanova</option>
+      <option>Pesaro</option>
     </select>
 
-    <label for="campo1">TV vendute</label>
-    <input type="text" id="campo1" name="campo1">
+    <label>Venduto Giorno</label>
+    <input type="text" id="venduto">
 
-    <label for="campo2">Frigoriferi venduti</label>
-    <input type="text" id="campo2" name="campo2">
+    <label>AV Budget Mese %</label>
+    <input type="text" id="budget">
 
-    <label for="campo3">Lavatrici vendute</label>
-    <input type="text" id="campo3" name="campo3">
+    <label>Finanziamenti / Safeguard</label>
+    <input type="text" id="safeguard">
 
-    <label for="campo4">Incassi Totali (€)</label>
-    <input type="text" id="campo4" name="campo4">
+    <label>Incidenza XD Ped Giorno</label>
+    <input type="text" id="xdped">
 
-    <button type="button" id="sendTelegram">Invia su Telegram</button>
-    <button type="button" id="sendWhatsApp">Invia su WhatsApp</button>
+    <label>Delta EKOS Mese (Euro)</label>
+    <input type="text" id="ekos">
+
+    <label>Delta SBS Mese (Euro)</label>
+    <input type="text" id="sbs">
+
+    <label>Delta XDE Mese Totale (Euro)</label>
+    <input type="text" id="xde">
+
+    <label>iPhone Totali / Garanzie</label>
+    <input type="text" id="iphone">
+
+    <label>Apple Info / Garanzie</label>
+    <input type="text" id="apple">
+
+    <label>Attivazioni HO</label>
+    <input type="text" id="ho">
+
+    <label>Attivazioni Very Mobile</label>
+    <input type="text" id="very">
+
+    <label>OLED</label>
+    <input type="text" id="oled">
+
+    <label>AEG Bianco</label>
+    <input type="text" id="aeg">
+
+    <label>Asciugatrici</label>
+    <input type="text" id="asciugatrici">
+
+    <label>Scope No Fili</label>
+    <input type="text" id="scope">
+
+    <label>I-Robot</label>
+    <input type="text" id="irobot">
+
+    <label>Caffè Automatiche</label>
+    <input type="text" id="caffe">
+
+    <div class="btn-container">
+      <button type="button" onclick="inviaTelegram()">Invia Telegram</button>
+    </div>
   </form>
 
   <script>
-    function generateMessage() {
-      const pv = document.getElementById('puntoVendita').value;
-      const c1 = document.getElementById('campo1').value;
-      const c2 = document.getElementById('campo2').value;
-      const c3 = document.getElementById('campo3').value;
-      const c4 = document.getElementById('campo4').value;
+    function inviaTelegram() {
+      const p = (id) => document.getElementById(id).value || '';
+      const pv = p('puntoVendita');
 
-      return `DATO ORE 13\n\nPunto vendita: ${pv}\n\n• TV vendute: ${c1}\n\n• Frigoriferi venduti: ${c2}\n\n• Lavatrici vendute: ${c3}\n\n• Incassi Totali (€): ${c4}`;
+      const msg = `DATI SERALI ORE 20 - ${pv}:\n\n` +
+        `* VENDUTO GIORNO: ${p('venduto')}\n\n` +
+        `* AV BUDGET MESE %: ${p('budget')}\n\n` +
+        `* FINANZIAMENTI / SAFEGUARD: ${p('safeguard')}\n\n` +
+        `* INCIDENZA XD PED GIORNO: ${p('xdped')}\n\n` +
+        `* DELTA EKOS MESE IN CORSO: ${p('ekos')}\n\n` +
+        `* DELTA SBS MESE IN CORSO: ${p('sbs')}\n\n` +
+        `* DELTA XDE MESE TOTALE: ${p('xde')}\n\n` +
+        `* IPHONE TOTALI / GARANZIE: ${p('iphone')}\n\n` +
+        `* APPLE INFO / GARANZIE: ${p('apple')}\n\n` +
+        `* ATTIVAZIONI HO: ${p('ho')}\n\n` +
+        `* ATTIVAZIONI VERY MOBILE: ${p('very')}\n\n` +
+        `* OLED: ${p('oled')}\n\n` +
+        `* AEG BIANCO: ${p('aeg')}\n\n` +
+        `* ASCIUGATRICI: ${p('asciugatrici')}\n\n` +
+        `* SCOPE NO FILI: ${p('scope')}\n\n` +
+        `* I-ROBOT: ${p('irobot')}\n\n` +
+        `* CAFFÈ AUTOMATICHE: ${p('caffe')}`;
+
+      const encoded = encodeURIComponent(msg);
+      window.open(`https://t.me/share/url?url=&text=${encoded}`, '_blank');
     }
-
-    document.getElementById('sendTelegram').addEventListener('click', function() {
-      const msg = encodeURIComponent(generateMessage());
-      window.open(`https://t.me/share/url?url=&text=${msg}`, '_blank');
-    });
-
-    document.getElementById('sendWhatsApp').addEventListener('click', function() {
-      const msg = encodeURIComponent(generateMessage());
-      window.open(`https://wa.me/?text=${msg}`, '_blank');
-    });
   </script>
+
 </body>
 </html>
