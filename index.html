@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -68,7 +67,12 @@
     <label>Finanziamenti / Safeguard</label>
     <input type="text" id="safeguard">
 
-    
+    <label>Pagodil Giorno</label>
+    <input type="text" id="pagodil_giorno">
+
+    <label>Pagodil Totali</label>
+    <input type="text" id="pagodil_totali">
+
     <label>Venduto XD Ped Giorno</label>
     <input type="text" id="venduto_xd">
 
@@ -124,7 +128,9 @@
       const msg = `DATI SERALI  ORE 20 :\n\n` +
         `VENDUTO : €${p('venduto')}\n` +
         `AV BUDGET MESE  : ${p('budget')}%\n\n` +
-        `FINANZ./SAFEGUARD ${p('safeguard')}\n\n` +
+        `FINANZ./SAFEGUARD ${p('safeguard')}\n` +
+        `PAGODIL GIORNO ${p('pagodil_giorno')}\n` +
+        `PAGODIL TOTALI ${p('pagodil_totali')}\n\n` +
         `VENDUTO XD PED GIORNO €${p('venduto_xd')}\n` + 
         `INCID.XD PED OGGI ${p('xdped')}%\n\n` +
         `DELTA EKOS MESE €${p('ekos')}\n` +
