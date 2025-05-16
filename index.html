@@ -64,6 +64,9 @@
     <label>AV Budget Mese %</label>
     <input type="text" id="budget">
 
+    <label>Delta Mese (€)</label>
+    <input type="text" id="delta_mese">
+
     <label>Promo IVA Apple</label>
     <input type="text" id="promo_iva_apple">
 
@@ -135,8 +138,10 @@
       }
 
       const msg = `DATI SERALI  ORE 20 :\n\n` +
+        `PUNTO VENDITA: ${pv}\n\n` +
         `VENDUTO : €${p('venduto')}\n` +
-        `AV BUDGET MESE  : ${p('budget')}%\n\n` +
+        `AV BUDGET MESE  : ${p('budget')}%\n` +
+        `DELTA MESE €${p('delta_mese')}\n\n` +
         `PROMO IVA APPLE ${p('promo_iva_apple')}\n` +
         `FINANZ./SAFEGUARD ${p('safeguard')}\n` +
         `PAGODIL GIORNO ${p('pagodil_giorno')}\n` +
