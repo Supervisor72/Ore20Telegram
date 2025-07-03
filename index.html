@@ -73,14 +73,11 @@
     <label>Promo 100</label>
     <input type="number" id="promo_100">
 
+    <label>Promo Alternative</label>
+    <input type="text" id="promo_alternative">
+
     <label>Finanziamenti / Safeguard</label>
     <input type="text" id="safeguard">
-
-    <label>Pagodil Giorno</label>
-    <input type="text" id="pagodil_giorno">
-
-    <label>Pagodil Totali</label>
-    <input type="text" id="pagodil_totali">
 
     <label>Delta EKOS Mese (Euro)</label>
     <input type="text" id="ekos">
@@ -134,26 +131,25 @@
         return;
       }
 
-      const msg = `DATI SERALI  ORE 20 :\n\n` +
+      const msg = `DATI SERALI  ORE 20 :\n\n` +
         `PUNTO VENDITA: ${pv}\n\n` +
         `VENDUTO : €${p('venduto')}\n` +
         `AV BUDGET MESE : ${p('budget')}%\n` +
         `DELTA MESE €${p('delta_mese')}\n` +
         `PROMO 50: ${p('promo_50')}\n` +
-        `PROMO 100: ${p('promo_100')}\n\n` +
-        `FINANZ./SAFEGUARD ${p('safeguard')}\n` +
-        `PAGODIL GIORNO ${p('pagodil_giorno')}\n` +
-        `PAGODIL TOTALI ${p('pagodil_totali')}\n\n` +
+        `PROMO 100: ${p('promo_100')}\n` +
+        `PROMO ALTERNATIVE: ${p('promo_alternative')}\n\n` +
+        `FINANZ./SAFEGUARD ${p('safeguard')}\n\n` +
         `DELTA EKOS MESE €${p('ekos')}\n` +
-        `DELTA SBS MESE  €${p('sbs')}\n` +
-        `DELTA XDE MESE  €${p('xde')}\n\n` +
+        `DELTA SBS MESE  €${p('sbs')}\n` +
+        `DELTA XDE MESE  €${p('xde')}\n\n` +
         `APPLE IPHONE/GAR.${p('iphone')}\n` +
         `APPLE PC /GAR. ${p('apple')}\n\n` +
         `ATTIVAZIONI HO ${p('ho')}\n` +
         `ATTIVAZIONI VERY ${p('very')}\n\n` +
         `OLED ${p('oled')}\n` +
-        `AEG  ${p('aeg')}\n` +
-        `ASCIUGA  ${p('asciugatrici')}\n` +
+        `AEG  ${p('aeg')}\n` +
+        `ASCIUGA  ${p('asciugatrici')}\n` +
         `SCOPE NO FILI ${p('scope')}\n` +
         `I-ROBOT ${p('irobot')}\n` +
         `CAFFE’AUTOM. ${p('caffe')}`;
