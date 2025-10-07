@@ -68,8 +68,8 @@
     <label>Delta Mese (€)</label>
     <input type="text" id="delta_mese">
 
-    <label>Delta Week in corso (€)</label>
-        <input type="text" id="delta_week_in_corso">
+    <label>Delta Week in corso  (€)</label>
+    <input type="text" id="delta week in corso">
 
     <label>Finanziamenti / Safeguard</label>
     <input type="text" id="safeguard">
@@ -131,3 +131,26 @@
         `VENDUTO : €${p('venduto')}\n` +
         `AV BUDGET MESE : ${p('budget')}%\n` +
         `DELTA MESE €${p('delta_mese')}\n` +
+        `DELTA WEEK IN CORSO  €${p('delta week')}\n` +
+        `FINANZ./SAFEGUARD ${p('safeguard')}\n\n` +
+        `DELTA EKOS MESE €${p('ekos')}\n` +
+        `DELTA SBS MESE  €${p('sbs')}\n` +
+        `DELTA XDE MESE  €${p('xde')}\n\n` +
+        `APPLE IPHONE/GAR.${p('iphone')}\n` +
+        `APPLE PC /GAR. ${p('apple')}\n\n` +
+        `ATTIVAZIONI HO ${p('ho')}\n` +
+        `ATTIVAZIONI VERY ${p('very')}\n\n` +
+        `OLED ${p('oled')}\n` +
+        `AEG  ${p('aeg')}\n` +
+        `ASCIUGA  ${p('asciugatrici')}\n` +
+        `SCOPE NO FILI ${p('scope')}\n` +
+        `I-ROBOT ${p('irobot')}\n` +
+        `CAFFE’AUTOM. ${p('caffe')}`;
+
+      const encoded = encodeURIComponent(msg);
+      window.open(`https://t.me/share/url?url=&text=${encoded}`, '_blank');
+    }
+  </script>
+
+</body>
+</html>
