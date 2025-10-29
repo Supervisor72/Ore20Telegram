@@ -1,167 +1,177 @@
+Certamente. Ho capito perfettamente.
+
+Ho preso il codice del tuo "Report Ore 13", mantenendo intatta la sua struttura HTML, lo stile CSS e la logica JavaScript (come la gestione del pulsante). Ho sostituito **solamente** i titoli e i campi (sia le etichette nel modulo che le variabili nel messaggio) con quelli del report "DATI SERALI - ORE 20".
+
+Ecco il codice pronto.
+
+```html
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dati Serali - Ore 20</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
       padding: 20px;
-      background: #f5f5f5;
-      max-width: 500px;
-      margin: auto;
+      background-color: #f5f5f5;
     }
-    h2 {
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #2c3e50;
       text-align: center;
+      margin-bottom: 25px;
+    }
+    .form-group {
       margin-bottom: 20px;
     }
     label {
       display: block;
-      margin-top: 15px;
-      font-weight: bold;
+      font-weight: 600;
+      margin-bottom: 8px;
     }
-    input, select {
+    input[type="text"], select { /* Cambiato da number a text per flessibilità */
       width: 100%;
-      padding: 12px;
-      margin-top: 6px;
-      font-size: 16px;
-      border-radius: 6px;
+      padding: 10px;
       border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .submit-section {
+      text-align: center;
+      margin-top: 30px;
     }
     button {
-      width: 100%;
-      padding: 12px;
-      margin-top: 20px;
-      font-size: 16px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      background-color: #0088cc;
+      background-color: #007bff;
       color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:disabled {
+      background-color: #aaa;
+    }
+    button:hover:not(:disabled) {
+      background-color: #0056b3;
     }
   </style>
 </head>
 <body>
+<div class="container">
+  <h1>DATI SERALI - ORE 20</h1>
 
-  <h2>DATI SERALI - ORE 20</h2>
-
-  <form id="dataForm">
-    <label for="puntoVendita">Punto Vendita</label>
-    <select id="puntoVendita" required>
-      <option value="">Seleziona...</option>
-      <option>Fano</option>
-      <option>Monsano</option>
-      <option>Osimo</option>
-      <option>Macerata</option>
-      <option>Civitanova</option>
-      <option>Pesaro</option>
-      <option>Foligno</option>
+  <div class="form-group">
+    <label for="punto-vendita">Punto Vendita</label>
+    <select id="punto-vendita" required>
+      <option value="">Seleziona punto vendita</option>
+      <option value="FANO">FANO</option>
+      <option value="MONSANO">MONSANO</option>
+      <option value="OSIMO">OSIMO</option>
+      <option value="MACERATA">MACERATA</option>
+      <option value="CIVITANOVA">CIVITANOVA</option>
+      <option value="PESARO">PESARO</option>
+      <option value="FOLIGNO">FOLIGNO</option> 
     </select>
+  </div>
 
-    <label>Venduto Giorno</label>
-    <input type="text" id="venduto">
+    <div class="form-group"><label>Venduto Giorno</label><input type="text" id="venduto"></div>
+  <div class="form-group"><label>AV Budget Mese %</label><input type="text" id="budget"></div>
+  <div class="form-group"><label>Delta Mese (€)</label><input type="text" id="delta_mese"></div>
+  <div class="form-group"><label>Delta Week in corso (€)</label><input type="text" id="delta_week"></div>
+  <div class="form-group"><label>PROMO 50</label><input type="text" id="promo50"></div>
+  <div class="form-group"><label>PROMO 100</label><input type="text" id="promo100"></div>
+  <div class="form-group"><label>PROMO ALTERNATIVE</label><input type="text" id="promo_alternative"></div>
+  <div class="form-group"><label>Finanziamenti / Safeguard</label><input type="text" id="safeguard"></div>
+  <div class="form-group"><label>Delta EKOS Mese (Euro)</label><input type="text" id="ekos"></div>
+  <div class="form-group"><label>Delta SBS Mese (Euro)</label><input type="text" id="sbs"></div>
+  <div class="form-group"><label>Delta XDE Mese Totale (Euro)</label><input type="text" id="xde"></div>
+  <div class="form-group"><label>iPhone Totali / Garanzie</label><input type="text" id="iphone"></div>
+  <div class="form-group"><label>Apple Info / Garanzie</label><input type="text" id="apple"></div>
+  <div class="form-group"><label>Attivazioni HO</label><input type="text" id="ho"></div>
+  <div class="form-group"><label>Attivazioni Very Mobile</label><input type="text" id="very"></div>
+  <div class="form-group"><label>OLED</label><input type="text" id="oled"></div>
+  <div class="form-group"><label>AEG Bianco</label><input type="text" id="aeg"></div>
+  <div class="form-group"><label>Asciugatrici</label><input type="text" id="asciugatrici"></div>
+  <div class="form-group"><label>Scope No Fili</label><input type="text" id="scope"></div>
+  <div class="form-group"><label>I-Robot</label><input type="text" id="irobot"></div>
+  <div class="form-group"><label>Caffè Automatiche</label><input type="text" id="caffe"></div>
 
-    <label>AV Budget Mese %</label>
-    <input type="text" id="budget">
+  <div class="submit-section">
+    <button id="submitBtn" onclick="inviaTelegram()">Invia Report Serali</button>
+  </div>
+</div>
 
-    <label>Delta Mese (€)</label>
-    <input type="text" id="delta_mese_val"> 
+<script>
+  function inviaTelegram() {
+    const btn = document.getElementById('submitBtn');
+    btn.disabled = true;
+    btn.innerText = 'Invio in corso...';
 
-    <label>Delta Week in corso (€)</label>
-    <input type="text" id="delta_week_val">
+    const get = id => document.getElementById(id)?.value?.trim() || '';
 
-    <label>PROMO 50</label>
-    <input type="text" id="promo50">
-
-    <label>PROMO 100</label>
-    <input type="text" id="promo100">
-
-    <label>PROMO ALTERNATIVE</label>
-    <input type="text" id="promo_alternative">
-        <label>Finanziamenti / Safeguard</label>
-    <input type="text" id="safeguard">
-
-    <label>Delta EKOS Mese (Euro)</label>
-    <input type="text" id="ekos">
-
-    <label>Delta SBS Mese (Euro)</label>
-    <input type="text" id="sbs">
-
-    <label>Delta XDE Mese Totale (Euro)</label>
-    <input type="text" id="xde">
-
-    <label>iPhone Totali / Garanzie</label>
-    <input type="text" id="iphone">
-
-    <label>Apple Info / Garanzie</label>
-    <input type="text" id="apple">
-
-    <label>Attivazioni HO</label>
-    <input type="text" id="ho">
-
-    <label>Attivazioni Very Mobile</label>
-    <input type="text" id="very">
-
-    <label>OLED</label>
-    <input type="text" id="oled">
-
-    <label>AEG Bianco</label>
-    <input type="text" id="aeg">
-
-    <label>Asciugatrici</label>
-    <input type="text" id="asciugatrici">
-
-    <label>Scope No Fili</label>
-    <input type="text" id="scope">
-
-    <label>I-Robot</label>
-    <input type="text" id="irobot">
-
-    <label>Caffè Automatiche</label>
-    <input type="text" id="caffe">
-
-    <button type="button" onclick="inviaTelegram()">Invia Telegram</button>
-  </form>
-
-  <script>
-    function inviaTelegram() {
-      const p = id => document.getElementById(id).value || '';
-      const pv = p('puntoVendita');
-
-      if (!pv) {
-        alert("Seleziona il punto vendita prima di inviare.");
-        return;
-      }
-
-      const msg = `DATI SERALI  ORE 20 :\n\n` +
-        `PUNTO VENDITA: ${pv}\n\n` +
-        `VENDUTO : €${p('venduto')}\n` +
-        `AV BUDGET MESE : ${p('budget')}%\n` +
-        `DELTA MESE €${p('delta_mese_val')}\n` +
-        `DELTA WEEK IN CORSO €${p('delta_week_val')}\n\n` +      
-        `PROMO 50: ${p('promo50')}\n` +
-        `PROMO 100: ${p('promo100')}\n` +
-        `PROMO ALTERNATIVE: ${p('promo_alternative')}\n\n` +
-        `FINANZ./SAFEGUARD ${p('safeguard')}\n\n` +
-        `DELTA EKOS MESE €${p('ekos')}\n` +
-        `DELTA SBS MESE  €${p('sbs')}\n` +
-        `DELTA XDE MESE  €${p('xde')}\n\n` +
-        `APPLE IPHONE/GAR.${p('iphone')}\n` +
-        `APPLE PC /GAR. ${p('apple')}\n\n` +
-        `ATTIVAZIONI HO ${p('ho')}\n` +
-        `ATTIVAZIONI VERY ${p('very')}\n\n` +
-        `OLED ${p('oled')}\n` +
-        `AEG  ${p('aeg')}\n` +
-        `ASCIUGA  ${p('asciugatrici')}\n` +
-        `SCOPE NO FILI ${p('scope')}\n` +
-        `I-ROBOT ${p('irobot')}\n` +
-        `CAFFE’AUTOM. ${p('caffe')}`;
-
-      const encoded = encodeURIComponent(msg);
-      window.open(`https://t.me/share/url?url=&text=${encoded}`, '_blank');
+    const pv = get('punto-vendita');
+    
+    if (!pv) {
+      alert('Seleziona il punto vendita prima di inviare.');
+      btn.disabled = false;
+      btn.innerText = 'Invia Report Serali';
+      return;
     }
-  </script>
+    
+    // Messaggio formattato per le ORE 20
+    const msg = `
+DATI SERALI ORE 20:
 
+PUNTO VENDITA: ${pv}
+
+VENDUTO : €${get('venduto')}
+AV BUDGET MESE : ${get('budget')}%
+DELTA MESE €${get('delta_mese')}
+DELTA WEEK IN CORSO €${get('delta_week')}
+
+PROMO 50: ${get('promo50')}
+PROMO 100: ${get('promo100')}
+PROMO ALTERNATIVE: ${get('promo_alternative')}
+
+FINANZ./SAFEGUARD ${get('safeguard')}
+
+DELTA EKOS MESE €${get('ekos')}
+DELTA SBS MESE €${get('sbs')}
+DELTA XDE MESE €${get('xde')}
+
+APPLE IPHONE/GAR. ${get('iphone')}
+APPLE PC /GAR. ${get('apple')}
+
+ATTIVAZIONI HO ${get('ho')}
+ATTIVAZIONI VERY ${get('very')}
+
+OLED ${get('oled')}
+AEG ${get('aeg')}
+ASCIUGA ${get('asciugatrici')}
+SCOPE NO FILI ${get('scope')}
+I-ROBOT ${get('irobot')}
+CAFFE’AUTOM. ${get('caffe')}
+    `.trim().replace(/^\s*\n/gm, ''); // Rimuove spazi e linee vuote in eccesso
+
+    const telegramUrl = `https://t.me/share/url?url=&text=${encodeURIComponent(msg)}`;
+    window.open(telegramUrl, '_blank');
+    
+    setTimeout(() => {
+        btn.disabled = false;
+        btn.innerText = 'Invia Report Serali';
+    }, 1000); // Riattiva il pulsante dopo 1 secondo
+  }
+</script>
 </body>
 </html>
+```
