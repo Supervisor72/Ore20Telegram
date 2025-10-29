@@ -66,10 +66,8 @@
     <input type="text" id="budget">
 
     <label>Delta Mese (€)</label>
-    <input type="text" id="delta_mese">
-
-    <label>Delta Week in corso (€)</label>
-    <input type="text" id="delta_week"> <label>PROMO 50</label>
+    <input type="text" id="delta_mese_originale">     <label>Delta Week in corso (€)</label>
+    <input type="text" id="delta_week_in_corso"> <label>PROMO 50</label>
     <input type="text" id="promo50">
 
     <label>PROMO 100</label>
@@ -132,13 +130,18 @@
         return;
       }
 
+      // HO AGGIUNTO ID UNICI PER DELTA MESE E DELTA WEEK PER EVITARE CONFUSIONI
+      // MA HO MANTENUTO LA STRUTTURA DEL MESSAGGIO ORIGINALE CON IL VALORE CORRETTO.
+      const deltaMeseVal = p('delta_mese_originale');
+      const deltaWeekVal = p('delta_week_in_corso');
+
       const msg = `DATI SERALI  ORE 20 :\n\n` +
         `PUNTO VENDITA: ${pv}\n\n` +
         `VENDUTO : €${p('venduto')}\n` +
         `AV BUDGET MESE : ${p('budget')}%\n` +
-        `DELTA MESE €${p('delta_mese')}\n` +
-        `DELTA WEEK IN CORSO €${p('delta_week')}\n` +      
-        // NUOVE VOCI AGGIUNTE NELLA STRINGA MESSAGGIO
+        `DELTA MESE €${deltaMeseVal}\n` +
+        `DELTA WEEK IN CORSO €${deltaWeekVal}\n\n` +      
+        // NUOVE VOCI AGGIUNTE
         `PROMO 50: ${p('promo50')}\n` +
         `PROMO 100: ${p('promo100')}\n` +
         `PROMO ALTERNATIVE: ${p('promo_alternative')}\n\n` +
