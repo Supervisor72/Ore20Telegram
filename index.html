@@ -32,7 +32,7 @@
       font-weight: 600;
       margin-bottom: 8px;
     }
-    input[type="text"], select { /* Cambiato da number a text per flessibilità */
+    input[type="text"], select {
       width: 100%;
       padding: 10px;
       border: 1px solid #ccc;
@@ -77,11 +77,11 @@
     </select>
   </div>
 
-    <div class="form-group"><label>Venduto Giorno</label><input type="text" id="venduto"></div>
+  <div class="form-group"><label>Venduto Giorno</label><input type="text" id="venduto"></div>
   <div class="form-group"><label>AV Budget Mese %</label><input type="text" id="budget"></div>
   <div class="form-group"><label>Delta Mese (€)</label><input type="text" id="delta_mese"></div>
   <div class="form-group"><label>Delta Week in corso (€)</label><input type="text" id="delta_week"></div>
-  <div class="form-group"><label>PROMO 50</label><input type="text" id="promo50"></div>
+  <div class="form-group"><label>PROMO 50</label><input type="text" id="promo50"></div>
   <div class="form-group"><label>PROMO 100</label><input type="text" id="promo100"></div>
   <div class="form-group"><label>PROMO ALTERNATIVE</label><input type="text" id="promo_alternative"></div>
   <div class="form-group"><label>Finanziamenti / Safeguard</label><input type="text" id="safeguard"></div>
@@ -121,9 +121,7 @@
       return;
     }
     
-    // Messaggio formattato per le ORE 20
-    const msg = `
-DATI SERALI ORE 20:
+    const msg = `DATI SERALI ORE 20:
 
 PUNTO VENDITA: ${pv}
 
@@ -154,7 +152,7 @@ ASCIUGA ${get('asciugatrici')}
 SCOPE NO FILI ${get('scope')}
 I-ROBOT ${get('irobot')}
 CAFFE’AUTOM. ${get('caffe')}
-    `.trim().replace(/^\s*\n/gm, ''); // Rimuove spazi e linee vuote in eccesso
+    `.trim().replace(/^\s*\n/gm, '');
 
     const telegramUrl = `https://t.me/share/url?url=&text=${encodeURIComponent(msg)}`;
     window.open(telegramUrl, '_blank');
@@ -162,9 +160,8 @@ CAFFE’AUTOM. ${get('caffe')}
     setTimeout(() => {
         btn.disabled = false;
         btn.innerText = 'Invia Report Serali';
-    }, 1000); // Riattiva il pulsante dopo 1 secondo
+    }, 1000);
   }
 </script>
 </body>
 </html>
-```
