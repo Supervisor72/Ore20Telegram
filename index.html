@@ -1,163 +1,156 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Dati Serali - Ore 20</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-      background: #f5f5f5;
-      max-width: 500px;
-      margin: auto;
-    }
-    h2 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    label {
-      display: block;
-      margin-top: 15px; /* Stile mantenuto */
-      font-weight: bold;
-    }
-    input, select {
-      width: 100%; /* Stile mantenuto */
-      padding: 12px; /* Stile mantenuto */
-      margin-top: 6px;
-      font-size: 16px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-    }
-    button {
-      width: 100%;
-      padding: 12px;
-      margin-top: 20px;
-      font-size: 16px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      background-color: #0088cc;
-      color: white;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dati Serali - Ore 20</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f5f5f5;
+      max-width: 500px;
+      margin: auto;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input, select {
+      width: 100%;
+      padding: 12px;
+      margin-top: 6px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      background-color: #0088cc;
+      color: white;
+    }
+  </style>
 </head>
 <body>
 
-  <h2>DATI SERALI - ORE 20</h2>
+  <h2>DATI SERALI - ORE 20</h2>
 
-  <form id="dataForm">
-    <label for="puntoVendita">Punto Vendita</label>
-    <select id="puntoVendita" required>
-      <option value="">Seleziona...</option>
-      <option>Fano</option>
-      <option>Monsano</option>
-      <option>Osimo</option>
-      <option>Macerata</option>
-      <option>Civitanova</option>
-      <option>Pesaro</option>
-      <option>Foligno</option>
-    </select>
+  <form id="dataForm">
+    <label for="puntoVendita">Punto Vendita</label>
+    <select id="puntoVendita" required>
+      <option value="">Seleziona...</option>
+      <option>Fano</option>
+      <option>Monsano</option>
+      <option>Osimo</option>
+      <option>Macerata</option>
+      <option>Civitanova</option>
+      <option>Pesaro</option>
+      <option>Foligno</option>
+    </select>
 
-    <label>Venduto Giorno</label>
-    <input type="text" id="venduto">
+    <label>Venduto Giorno</label>
+    <input type="text" id="venduto">
 
-    <label>AV Budget Mese %</label>
-    <input type="text" id="budget">
+    <label>AV Budget Mese %</label>
+    <input type="text" id="budget">
 
-    <label>Delta Mese (€)</label>
-    <input type="text" id="delta_mese">
+    <label>Delta Mese (€)</label>
+    <input type="text" id="delta_mese">
 
-    <label>Delta Week in corso (€)</label>
-    <input type="text" id="delta_week"> <label>PROMO 50</label>
-    <input type="text" id="promo50">
+    <label>Delta Week in corso (€)</label>
+    <input type="text" id="delta_mese">
 
-    <label>PROMO 100</label>
-    <input type="text" id="promo100">
+    <label>Finanziamenti / Safeguard</label>
+    <input type="text" id="safeguard">
 
-    <label>PROMO ALTERNATIVE</label>
-    <input type="text" id="promoalternative">
-        <label>Finanziamenti / Safeguard</label>
-    <input type="text" id="safeguard">
+    <label>Delta EKOS Mese (Euro)</label>
+    <input type="text" id="ekos">
 
-    <label>Delta EKOS Mese (Euro)</label>
-    <input type="text" id="ekos">
+    <label>Delta SBS Mese (Euro)</label>
+    <input type="text" id="sbs">
 
-    <label>Delta SBS Mese (Euro)</label>
-    <input type="text" id="sbs">
+    <label>Delta XDE Mese Totale (Euro)</label>
+    <input type="text" id="xde">
 
-    <label>Delta XDE Mese Totale (Euro)</label>
-    <input type="text" id="xde">
+    <label>iPhone Totali / Garanzie</label>
+    <input type="text" id="iphone">
 
-    <label>iPhone Totali / Garanzie</label>
-    <input type="text" id="iphone">
+    <label>Apple Info / Garanzie</label>
+    <input type="text" id="apple">
 
-    <label>Apple Info / Garanzie</label>
-    <input type="text" id="apple_pc">     <label>Attivazioni HO</label>
-    <input type="text" id="ho">
+    <label>Attivazioni HO</label>
+    <input type="text" id="ho">
 
-    <label>Attivazioni Very Mobile</label>
-    <input type="text" id="very">
+    <label>Attivazioni Very Mobile</label>
+    <input type="text" id="very">
 
-    <label>OLED</label>
-    <input type="text" id="oled">
+    <label>OLED</label>
+    <input type="text" id="oled">
 
-    <label>AEG Bianco</label>
-    <input type="text" id="aeg">
+    <label>AEG Bianco</label>
+    <input type="text" id="aeg">
 
-    <label>Asciugatrici</label>
-    <input type="text" id="asciugatrici">
+    <label>Asciugatrici</label>
+    <input type="text" id="asciugatrici">
 
-    <label>Scope No Fili</label>
-    <input type="text" id="scope">
+    <label>Scope No Fili</label>
+    <input type="text" id="scope">
 
-    <label>I-Robot</label>
-    <input type="text" id="irobot">
+    <label>I-Robot</label>
+    <input type="text" id="irobot">
 
-    <label>Caffè Automatiche</label>
-    <input type="text" id="caffe">
+    <label>Caffè Automatiche</label>
+    <input type="text" id="caffe">
 
-    <button type="button" onclick="inviaTelegram()">Invia Telegram</button>
-  </form>
+    <button type="button" onclick="inviaTelegram()">Invia Telegram</button>
+  </form>
 
-  <script>
-    function inviaTelegram() {
-      const p = id => document.getElementById(id).value || '';
-      const pv = p('puntoVendita');
+  <script>
+    function inviaTelegram() {
+      const p = id => document.getElementById(id).value || '';
+      const pv = p('puntoVendita');
 
-      if (!pv) {
-        alert("Seleziona il punto vendita prima di inviare.");
-        return;
-      }
+      if (!pv) {
+        alert("Seleziona il punto vendita prima di inviare.");
+        return;
+      }
 
-      const msg = `DATI SERALI  ORE 20 :\n\n` +
-        `PUNTO VENDITA: ${pv}\n\n` +
-        `VENDUTO : €${p('venduto')}\n` +
-        `AV BUDGET MESE : ${p('budget')}%\n` +
-        `DELTA MESE €${p('delta_mese')}\n` +
-        `DELTA WEEK IN CORSO €${p('delta_week')}\n` +      
-        `PROMO 50 ${p('promo50')}\n` +
-        `PROMO 100 ${p('promo100')}\n` +
-        `PROMO ALTERNATIVE ${p('promoalternative')}\n\n` +
-        `FINANZ./SAFEGUARD ${p('safeguard')}\n\n` +
-        `DELTA EKOS MESE €${p('ekos')}\n` +
-        `DELTA SBS MESE  €${p('sbs')}\n` +
-        `DELTA XDE MESE  €${p('xde')}\n\n` +
-        `APPLE IPHONE/GAR. ${p('iphone')}\n` +
-        `APPLE PC /GAR. ${p('apple_pc')}\n\n` +
-        `ATTIVAZIONI HO ${p('ho')}\n` +
-        `ATTIVAZIONI VERY ${p('very')}\n\n` +
-        `OLED ${p('oled')}\n` +
-        `AEG  ${p('aeg')}\n` +
-        `ASCIUGA  ${p('asciugatrici')}\n` +
-        `SCOPE NO FILI ${p('scope')}\n` +
-        `I-ROBOT ${p('irobot')}\n` +
-        `CAFFE’AUTOM. ${p('caffe')}`;
+      const msg = `DATI SERALI  ORE 20 :\n\n` +
+        `PUNTO VENDITA: ${pv}\n\n` +
+        `VENDUTO : €${p('venduto')}\n` +
+        `AV BUDGET MESE : ${p('budget')}%\n` +
+        `DELTA MESE €${p('delta_mese')}\n` +
+        `DELTA WEEK IN CORSO €${p('delta_mese')}\n` +      
+        `FINANZ./SAFEGUARD ${p('safeguard')}\n\n` +
+        `DELTA EKOS MESE €${p('ekos')}\n` +
+        `DELTA SBS MESE  €${p('sbs')}\n` +
+        `DELTA XDE MESE  €${p('xde')}\n\n` +
+        `APPLE IPHONE/GAR.${p('iphone')}\n` +
+        `APPLE PC /GAR. ${p('apple')}\n\n` +
+        `ATTIVAZIONI HO ${p('ho')}\n` +
+        `ATTIVAZIONI VERY ${p('very')}\n\n` +
+        `OLED ${p('oled')}\n` +
+        `AEG  ${p('aeg')}\n` +
+        `ASCIUGA  ${p('asciugatrici')}\n` +
+        `SCOPE NO FILI ${p('scope')}\n` +
+        `I-ROBOT ${p('irobot')}\n` +
+        `CAFFE’AUTOM. ${p('caffe')}`;
 
-      const encoded = encodeURIComponent(msg);
-      window.open(`https://t.me/share/url?url=&text=${encoded}`, '_blank');
-    }
-  </script>
+      const encoded = encodeURIComponent(msg);
+      window.open(`https://t.me/share/url?url=&text=${encoded}`, '_blank');
+    }
+  </script>
 
 </body>
 </html>
